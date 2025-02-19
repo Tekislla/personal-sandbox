@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Página inicial</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+
+        <script src="auth/js/keycloak.js"></script>
+        <script>
+            function initKeycloak() {
+                var keycloak = new Keycloak({
+                    url: 'http://localhost:8090/auth',
+                    realm: 'pizza',
+                    clientId: 'pizza',
+                    publicClient: true
+                });
+                keycloak.init({
+                    onLoad: 'login-required'
+                }).then(function(authenticated) {
+                    alert(authenticated ? 'authenticated' : 'not authenticated');
+                }).catch(function() {
+                    alert('failed to initialize');
+                });
+            }
+        </script>
+
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/img/urlicon.png">
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+
+    </head>
+    <body id="page-top" onload="initKeycloak()">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top"><img id="brandImage" src="assets/img/logo.png" alt=""></a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Monte sua pizza</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre nós</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="masthead-avatar mb-5" src="assets/img/logo.png" alt="">
+                <h1 class="masthead-heading mb-0"><span id="teste"> </span></h1>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-pizza-slice"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <br>
+                <div id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="navButtons" id="indexButton" style="display: inline-block;"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#signinModal">Login</a>
+                        </li>
+                        <br>
+                        <li class="navButtons" id="indexButton" style="display: inline-block;"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" data-toggle="modal" data-target="#signupModal">Cadastre-se</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">MONTE SUA PIZZA</h2>
+                </div>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-pizza-slice"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div id="pizzaGrid" class="row justify-content-center"> 
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: #a3283a;">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-pizza-slice fa-3x"></i>
+                                    <br>
+                                    <br>
+                                    <p>Pequena</p>
+                                    <p>1 sabor</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/defaultpizzaimg.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: #a3283a;">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-pizza-slice fa-3x"></i>
+                                    <br>
+                                    <br>
+                                    <p>Média</p>
+                                    <p>2 sabores</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/defaultpizzaimg.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: #a3283a;">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-pizza-slice fa-3x"></i>
+                                    <br>
+                                    <br>
+                                    <p>Grande</p>
+                                    <p>3 sabores</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/defaultpizzaimg.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: #a3283a;">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-pizza-slice fa-3x"></i>
+                                    <br>
+                                    <br>
+                                    <p>Gigante</p>
+                                    <p>4 sabores</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/defaultpizzaimg.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100" style="background-color: #a3283a;">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-pizza-slice fa-3x"></i>
+                                    <br>
+                                    <br>
+                                    <p>Tamanho família</p>
+                                    <p>5 sabores</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/defaultpizzaimg.png" alt="Log Cabin"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="credentialsModals">
+            <div class="portfolio-modal modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="#signupModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Cadastre-se!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Nome</label>
+                                                    <input type="text" class="form-control" name="userName" id="floatingInput" placeholder="Nome">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">E-mail</label>
+                                                    <input type="email" class="form-control" name="userEmail" id="floatingInput" placeholder="E-mail">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Telefone</label>
+                                                    <input type="text" class="form-control" name="userPhone" id="floatingInput" placeholder="Telefone">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Senha</label>
+                                                    <input type="password" class="form-control" name="userPassword" id="floatingInput" placeholder="Senha">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Rua</label>
+                                                    <input type="text" class="form-control" name="userStreet" id="floatingInput" placeholder="Rua">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Bairro</label>
+                                                    <input type="text" class="form-control" name="userDistrict" id="floatingInput" placeholder="Bairro">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Número</label>
+                                                    <input type="text" class="form-control" name="userNumber" id="floatingInput" placeholder="Número">
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Complemento</label>
+                                                    <input type="text" class="form-control" name="userComplement" id="floatingInput" placeholder="Complemento">
+                                                    <br>
+                                                  </div>
+                                                  <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="createUser()" style="background-color: #A3283A; border: none; color: white;">Cadastre-se!</button>
+                                            </div>   
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-modal modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="#signinModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Login</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>    
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <input type="text" class="form-control" name="loginEmail" id="floatingInput" placeholder="Email">
+                                                    <label for="floatingInput">Email</label>
+                                                    <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <input type="password" name="loginPassword" class="form-control" id="floatingPassword" placeholder="Senha">
+                                                    <label for="floatingPassword">Senha</label>
+                                                  </div>
+                                                  <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="login()" style="background-color: #A3283A; border: none; color: white;">Login</button>
+                                            </div>
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pizzaModals">
+            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Monte sua pizza!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList1">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione a borda</label>
+                                                    <select type="text" class="form-control" id="edgeList1">
+                                                      <option index selected disabled hidden>Selecione uma opção</option>
+                                             
+                                                  </select>
+                                                  </div>
+                                                <br>
+                                                <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="orderPizzaP()" style="background-color: #A3283A; border: none; color: white;">Realizar pedido</button>
+                                            </div>  
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal2Label" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Monte sua pizza!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o primeiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList2">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o segundo sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList3">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione a borda</label>
+                                                    <select type="text" class="form-control" id="edgeList2">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  </div>
+                                                <br>
+                                                <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="orderPizzaM()" style="background-color: #A3283A; border: none; color: white;">Realizar pedido</button>
+                                            </div>  
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal3Label" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Monte sua pizza!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o primeiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList4">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o segundo sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList5">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o terceiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList6">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione a borda</label>
+                                                    <select type="text" class="form-control" id="edgeList3">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  </div>
+                                                <br>
+                                                <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="orderPizzaG()" style="background-color: #A3283A; border: none; color: white;">Realizar pedido</button>
+                                            </div>  
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal4Label" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Monte sua pizza!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o primeiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList7">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o segundo sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList8">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o terceiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList9">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o quarto sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList10">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione a borda</label>
+                                                    <select type="text" class="form-control" id="edgeList4">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  </div>
+                                                <br>
+                                                <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="orderPizzaGg()" style="background-color: #A3283A; border: none; color: white;">Realizar pedido</button>
+                                            </div>  
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal5Label" aria-hidden="true">
+                <div class="modal-dialog modal-m" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="fas fa-times"></i></span>
+                            </button>
+                            <div class="modal-body text-center">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-8">
+                                            <h3 class="text-secondary mb-0" style="color: #a3283a">Monte sua pizza!</h3>
+                                            <br>
+                                            <div class="divider-custom">
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                                <div class="divider-custom-icon">
+                                                    <i class="fas fa-pizza-slice" style="color: #a3283a;"></i>
+                                                </div>
+                                                <div class="divider-custom-line" style="background-color: #a3283a">
+                                                </div>
+                                            </div>
+                                            <main class="form-signin">
+                                                <div id="signup">
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o primeiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList11">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o segundo sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList12">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o terceiro sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList13">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o quarto sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList14">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione o quinto sabor</label>
+                                                    <select type="text" class="form-control" id="flavorList15">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                  </select>
+                                                  <br>
+                                                  </div>
+                                                  <div class="form-floating">
+                                                    <label for="floatingInput">Selecione a borda</label>
+                                                    <select type="text" class="form-control" id="edgeList5">
+                                                      <option selected disabled hidden>Selecione uma opção</option>
+                                                      
+                                                  </select>
+                                                  </div>
+                                                <br>
+                                                <br>
+                                                  <button class="w-100 btn btn-lg btn-primary" onclick="orderPizzaXg()" style="background-color: #A3283A; border: none; color: white;">Realizar pedido</button>
+                                            </div>  
+                                        </main>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading d-inline-block text-white">SOBRE A PIZZARIA</h2>
+                </div>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-pizza-slice"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <p class="pre-wrap lead">Com mais de 10 anos de história, nossa pizzaria é uma das mais tradicionais de Joinville. Contamos com uma equipe especializada e um produto diferencial.</p>
+                    </div>
+                    <div class="col-lg-4 mr-auto">
+                        <p class="pre-wrap lead">Trabalhamos com ingredientes selecionados e de qualidade, tudo para oferecer o melhor produto final ao nosso consumidor!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTATO</h2>
+                </div>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-pizza-slice"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="text-muted">Phone</div>
+                            <div class="lead font-weight-bold">(47) 99198-5098</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:jplazarim@gmail.com">jplazarim@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">LOCALIZAÇÃO</h4>
+                        <p class="pre-wrap lead mb-0">Joinville
+Santa Catarina </p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="mb-4">NOSSAS REDES SOCIAIS</h4><a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/StartBootstrap"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.twitter.com/sbootstrap"><i class="fab fa-fw fa-twitter"></i></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="mb-4">SOBRE O PROJETO</h4>
+                        <p class="pre-wrap lead mb-0">Projeto desenvolvido por fins didáticos.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">© João Pedro - 2021 </small></div>
+        </section>
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

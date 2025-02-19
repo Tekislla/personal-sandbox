@@ -1,0 +1,73 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+	<changeSet id="pizza" author="joao_lazarim">
+		<createTable tableName="usuario">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="phone" type="bigint" />
+			<column name="name" type="varchar(50)" />
+			<column name="email" type="varchar(50)" />
+			<column name="password" type="varchar(50)" />
+			<column name="street" type="varchar(50)" />
+			<column name="district" type="varchar(50)" />
+			<column name="number" type="bigint" />
+			<column name="complement" type="varchar(50)" />
+		</createTable>
+		<createTable tableName="flavor">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="varchar(50)" />
+			<column name="description" type="varchar(255)" />
+			<column name="value" type="float" />
+		</createTable>
+		<createTable tableName="edge">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="varchar(50)" />
+			<column name="value" type="float" />
+		</createTable>
+		<createTable tableName="pizza">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="edge_id" type="bigint">
+				<constraints foreignKeyName="fk_pizza_edge" references="edge(id)" />
+			</column>
+			<column name="flavor_id" type="bigint">
+				<constraints foreignKeyName="fk_pizza_flavor" references="flavor(id)" />
+			</column>
+			<column name="size" type="varchar(30)" />
+			<column name="value" type="float" />
+		</createTable>
+			<createTable tableName="pizza_flavor">
+			<column name="pizza_id" type="bigint" />
+			<column name="flavor_id" type="bigint" />
+		</createTable>
+		<createTable tableName="request">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="pizza_id" type="bigint">
+				<constraints foreignKeyName="fk_request_pizza" references="pizza(id)" />
+			</column>
+			<column name="usuario_id" type="bigint">
+				<constraints foreignKeyName="fk_usuario_id" references="usuario(id)" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="alterRequest" author="joao_lazarim">
+		<addColumn tableName="request">
+			<column name="date_time" type="datetime" />
+			<column name="processed" type="boolean" />
+		</addColumn>
+	</changeSet>
+	
+</databaseChangeLog>

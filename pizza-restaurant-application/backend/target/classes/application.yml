@@ -1,0 +1,23 @@
+server:
+ port: 2000
+ servlet:
+    context-path: /pizza
+ 
+spring:
+  application:
+    name: "pizza"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pizza
+    username: postgres
+    password: postgres
+    driver: 
+      class: org.hibernate.dialect.PostgreSQL10Dialect
+  liquibase:
+    change-log: classpath:/db/dbchangeLog.xml
+  jpa:
+    hibernate:
+      ddl-auto: none
+  security:
+    oauth2:
+      resourceserver:
+        jwt.jwk-set-uri: http://localhost:8090/auth/realms/pizza/protocol/openid-connect/certs

@@ -1,0 +1,8 @@
+{
+  "realm": "pizza",
+  "auth-server-url": "http://localhost:8090/auth/",
+  "ssl-required": "none",
+  "resource": "pizza",
+  "public-client": true,
+  "confidential-port": 0
+}
