@@ -1,0 +1,12 @@
+com\calc\calculator\classes\Calculation.class
+com\calc\calculator\thiago\CalculatedValue.class
+com\calc\calculator\CalculatorApplication.class
+com\calc\calculator\security\KeycloakRoleConverter.class
+com\calc\calculator\security\SecurityConfig.class
+com\calc\calculator\thiago\CalculationServiceThiago.class
+com\calc\calculator\classes\ReturnList.class
+com\calc\calculator\thiago\ThiagoController.class
+com\calc\calculator\service\CalculationService.class
+com\calc\calculator\classes\CalculatedValue.class
+com\calc\calculator\classes\PaymentDate.class
+com\calc\calculator\controller\CalculationController.class

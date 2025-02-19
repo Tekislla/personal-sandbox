@@ -1,0 +1,7 @@
+com\bank\operations\security\KeycloakRoleConverter.class
+com\bank\operations\security\SecurityConfig.class
+com\bank\operations\controller\BankOperationsController.class
+com\bank\operations\classes\BankOperations.class
+com\bank\operations\OperationsApplication.class
+com\bank\operations\repository\BankOperationsRepository.class
+com\bank\operations\service\BankOperationsService.class

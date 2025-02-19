@@ -1,0 +1,15 @@
+server:
+ port: 7075
+ 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/driver
+    username: postgres
+    password: postgres
+    driver: 
+      class: org.hibernate.dialect.PostgreSQL10Dialect
+  liquibase:
+    change-log: classpath:/db/dbchangeLog.xml
+  jpa:
+    hibernate:
+      ddl-auto: none

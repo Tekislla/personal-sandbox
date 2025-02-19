@@ -1,0 +1,37 @@
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">				  
+
+<changeSet  id="1"  author="joao">
+<createTable  tableName="contract">
+	<column name="id" type="bigint" autoIncrement="true">
+		<constraints primaryKey="true" nullable="false"/>
+	</column>
+	<column name=  "description"   type = "varchar(50)"/>
+	<column name = "balance"         type = "number"/>     
+	<column name = "interest_rate" type = "number"/> 
+	<column name = "term"  type = "number"/>  
+	<column name = "base_days"  type = "number"/>
+	<column name = "initial_date"  type = "date"/>
+	<column name = "final_date"    type = "date"/>
+</createTable>
+<createTable  tableName="contract_value">
+	<column name="id" type="bigint" autoIncrement="true">
+		<constraints primaryKey="true" nullable="false"/>
+	</column>
+	<column name = "contract_id"       type = "bigint">
+		<constraints foreignKeyName = "fk_contract_value"/>
+	</column>
+	<column name=  "balance_due"           type = "number"/>
+	<column name = "principal_balance"   type = "number"/>     
+	<column name = "interest_prov"    type = "number"/>   
+	<column name = "parcel" type = "number"/>
+	<column name = "amortization"   type = "number"/>     
+	<column name = "interest_accum"    type = "number"/>   
+	<column name = "interest_paid" type = "number"/>
+	<column name = "reference_date"    type = "date"/>
+</createTable>
+</changeSet>
+</databaseChangeLog>

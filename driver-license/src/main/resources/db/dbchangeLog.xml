@@ -1,0 +1,44 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+	<changeSet id="1" author="joao">
+		<createTable tableName="driver">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="varchar(50)" />
+			<column name="age" type="number" />
+		</createTable>
+		<createTable tableName="car">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="driver_id" type="bigint">
+				<constraints foreignKeyName="fk_car_driver" />
+			</column>
+			<column name="license_id" type="bigint">
+				<constraints foreignKeyName="fk_car_license" />
+			</column>
+			<column name="brand" type="varchar(50)" />
+			<column name="model" type="varchar(50)" />
+			<column name="year" type="number" />
+			<column name="purchase_date" type="date" />
+		</createTable>
+		<createTable tableName="license">
+			<column name="id" type="bigint" autoIncrement="true">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="driver_id" type="bigint">
+				<constraints foreignKeyName="fk_license_driver" />
+			</column>
+			<column name="car_id" type="bigint">
+				<constraints foreignKeyName="fk_license_car" />
+			</column>
+			<column name="issue_date" type="date" />
+			<column name="expiration_date" type="date" />
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
