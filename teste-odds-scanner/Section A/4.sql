@@ -1,0 +1,1 @@
+select employees.first_name, employees.last_name, jobs.job_title, employees.department_id, departments.department_name, locations.city from employees, jobs, departments, locations where employees.department_id = departments.department_id and departments.location_id = locations.location_id and locations.city = 'London'

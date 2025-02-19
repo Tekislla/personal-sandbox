@@ -1,0 +1,1 @@
+select manager_id, salary from employees order by salary asc limit 1;
